@@ -55,7 +55,7 @@
 
 - 콘솔: 프로그램을 진단할 때 사용하는 텍스트 전용 도구
 - 단축키: ctrl + shift + j (크롬 브라우저)
-- console.log: 메서드
+- `console.log`: 메서드
 
 </br>
 </br>
@@ -89,7 +89,7 @@
     
 
 - 가장 대중적인 그래픽 라이브러리로 간단한 원과 같은 도형을 그림
-- id: 자바스크립트와 CSS에서 해당 요소를 쉽게 찾기 위함
+- `id`: 자바스크립트와 CSS에서 해당 요소를 쉽게 찾기 위함
 - 캔버스 추가
 </br>
 
@@ -115,7 +115,7 @@
       
       paper.view.draw();
 
-- 보일러플레이트(Boilerplate): 어떤 일을 하기 전에 먼저 실행해야 하는 코드
+- `보일러플레이트(Boilerplate)`: 어떤 일을 하기 전에 먼저 실행해야 하는 코드
 
 </br>
 
@@ -158,6 +158,23 @@
 
 - 툴(Tool) 객체를 통해 사용자 입력을 처리
 - 객체를 만들고나면 이벤트 핸들러를 연결 가능
-- onMouseDown: 사용자가 마우스를 클릭할 때마다 핸들러에 연결된 함수가 호출됨
+- `onMouseDown`: 사용자가 마우스를 클릭할 때마다 핸들러에 연결된 함수가 호출됨
+</br>
+</br>
+
+⭐ 텍스트 추가하기
+============
+
+    var c= Shape.Circle(200, 200, 80);
+    c.fillColor = 'black';
+    var text = new PointText(200, 200);
+    text.justification = 'center';
+    text.fillColor = 'white';
+    text.fontsize = 20;
+    text.content = 'hello world';
+
+- 텍스트의 배경이 되는 원을 만들고
+- 텍스트 객체 `PointText` 생성
+- 텍스트가 캔버스의 중앙에 위치
 </br>
 </br>
