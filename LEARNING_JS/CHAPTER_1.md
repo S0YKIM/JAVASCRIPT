@@ -110,6 +110,8 @@
 
 - 보일러플레이트(Boilerplate): 어떤 일을 하기 전에 먼저 실행해야 하는 코드
 
+</br>
+
       var c = Shape.Circle(200, 200, 50);
       c.fillColor = 'green';
 
