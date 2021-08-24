@@ -75,3 +75,45 @@
 - `'use strict';`: 인터프리터에서 코드를 엄격하게 처리하라는 의미
 </br>
 </br>
+
+⭐ PAPER.JS 로 원 그리기
+============
+
+(1) HTML
+    
+    <canvas id="mainCanvas"></canvas>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.9.25/paper-full.min.js"></script>
+    <script src="main.js"> </script>
+    
+
+- 가장 대중적인 그래픽 라이브러리로 간단한 원과 같은 도형을 그림
+- id: 자바스크립트와 CSS에서 해당 요소를 쉽게 찾기 위함
+- 캔버스 추가
+
+(2) CSS
+
+    #mainCanvas {
+    width: 400px;
+    height: 400px;
+    border: solid 1px black;
+    }
+
+- 캔버스의 크기와 테두리 색 지정
+
+(3) main.js
+
+      paper.install(window);
+      paper.setup(document.getElementById('mainCanvas'));
+      
+      paper.view.draw();
+
+- 보일러플레이트(Boilerplate): 어떤 일을 하기 전에 먼저 실행해야 하는 코드
+
+      var c = Shape.Circle(200, 200, 50);
+      c.fillColor = 'green';
+
+- 보일러플레이트 사이에 실제로 그림을 그리는 코드를 삽입해준다.
+- 매개변수: 원 중앙의 x좌표, y좌표, 원의 반지름
+</br>
+</br>
