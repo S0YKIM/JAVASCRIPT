@@ -145,3 +145,19 @@
 - x축과 y축에서 각각 반복
 </br>
 </br>
+
+⭐ 사용자 입력 처리하기
+============
+
+     var tool = new Tool();
+
+     tool.onMouseDown = function(event) {
+        var c = Shape.Circle(event.point.x, event.point.y, 20);
+        c.fillColor = 'green';
+     };
+
+- 툴(Tool) 객체를 통해 사용자 입력을 처리
+- 객체를 만들고나면 이벤트 핸들러를 연결 가능
+- onMouseDown: 사용자가 마우스를 클릭할 때마다 핸들러에 연결된 함수가 호출됨
+</br>
+</br>
