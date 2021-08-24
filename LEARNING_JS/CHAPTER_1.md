@@ -35,11 +35,11 @@
 ⭐ HTML
 ============
 
-1 - 헤드
+1 - HEAD
 -----
 - 브라우저에 절대 나타나지 않는 요소
 
-2 - 바디
+2 - BODY
 ----
 - 브라우저에 렌더링될 페이지 콘텐츠
 ❗ <script> 와 같은 특정 요소는 바디에 있어도 브라우저에 나타나지 않음
@@ -79,7 +79,8 @@
 ⭐ PAPER.JS 로 원 그리기
 ============
 
-(1) HTML
+1 - HTML
+----
     
     <canvas id="mainCanvas"></canvas>
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
@@ -93,7 +94,8 @@
 </br>
 
 
-(2) CSS
+2 - CSS
+----
 
     #mainCanvas {
     width: 400px;
@@ -105,7 +107,8 @@
 
 </br>
 
-(3) main.js
+3 - main.js
+----
 
       paper.install(window);
       paper.setup(document.getElementById('mainCanvas'));
