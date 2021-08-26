@@ -86,6 +86,13 @@
 - 숫자, 문자열, 불리언, 심볼, null, undefined
 </br>
 
+(1) 숫자
+(2) 문자열
+(3) 불리언
+(4) 심볼
+(5) null
+(6) undefined
+
 2 - 객체(Object)
 ----
 
@@ -96,14 +103,14 @@
 </br>
 ❗ Number 객체의 유용한 프로퍼티들
 
-- Number.EPSILON: 1에 더했을 때 1과 구분되는 값을 만드는 가장 작은 값
-- Number.MAX_SAFE_INTEGER: 표현 가능한 가장 큰 정수
-- Number.MIN_SAFE_INTEGER: 표현 가능한 가장 작은 정수
-- Number.MAX_VALUE: 표현 가능한 가장 큰 숫자
-- Number.MIN_VALUE: 표현 가능한 가장 작은 숫자
-- Number.NEGATIVE_INFINITY: -무한수
-- Number.POSITIVE_INFINITY: 무한수
-- Number.NaN: 숫자가 아닌 것(Not a Number)
+- `Number.EPSILON`: 1에 더했을 때 1과 구분되는 값을 만드는 가장 작은 값
+- `Number.MAX_SAFE_INTEGER`: 표현 가능한 가장 큰 정수
+- `Number.MIN_SAFE_INTEGER`: 표현 가능한 가장 작은 정수
+- `Number.MAX_VALUE`: 표현 가능한 가장 큰 숫자
+- `Number.MIN_VALUE`: 표현 가능한 가장 작은 숫자
+- `Number.NEGATIVE_INFINITY`: -무한수
+- `Number.POSITIVE_INFINITY`: 무한수
+- `Number.NaN`: 숫자가 아닌 것(Not a Number)
 
 
 
