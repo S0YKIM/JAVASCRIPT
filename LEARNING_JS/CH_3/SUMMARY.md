@@ -76,29 +76,120 @@
 </br>
 </br>
 
-⭐ 원시 타입과 객체
-============
-
-1 - 원시(Primitive)
------
+⭐ 원시(Primitive)
+=============
 
 - 절대 불변 (ex: 숫자 '5' 는 항상 숫자 '5')
 - 숫자, 문자열, 불리언, 심볼, null, undefined
 </br>
 
-(1) 숫자
-(2) 문자열
-(3) 불리언
-(4) 심볼
-(5) null
-(6) undefined
+1 - 숫자
+----
+- 숫자형 데이터 타입은 언제나 `double`
+</br>
 
-2 - 객체(Object)
+2 - 문자열
+----
+- 문자열 리터럴에는 큰따옴표("), 작은따옴표('), 백틱(\`)을 사용
+- 이스케이프(\): 문자열 안에 따옴표나 백틱을 사용해야 하는 경우 또는 특수문자(ex: \n, \t)
+</br>
+
+    const dialog1 = "He looked up and said \"don't do that!\" to Max.";
+    const dialog2 = 'He looked up and said "don\'t do that!" to Max.';
+    const s = "In JavaScript, use \\ as an escape character in strings.";
+
+- 문자열 병합: 변수나 상수를 문자열 안에 사용 가능
+</br>
+
+    let currentTemp = 19.5;
+    const message = "The current temperature is " + currentTemp + "\u00b0C";
+    
+- 문자열 템플릿: 백틱을 사용해 변수나 상수를 문자열 안에 사용
+</br>
+
+    let currentTemp = 19.5;
+    const message = `The current temperature is ${currentTemp}\u00b0C`;
+    
+</br>
+    
+3 - 불리언
+----
+- 참(True) 또는 거짓(False) 두 가지 값을 가짐
+
+    let heating = true;
+    let cooling = false;
+</br>
+
+4 - 심볼
+----
+- 항상 유일하며 다른 어떤 심볼과도 일치하지 않음
+</br>
+
+    const RED = Symbol("The color of a sunset!");
+    const ORANGE = Symbol("The color of a sunset!");
+    RED === ORANGE // false: 심볼은 모두 서로 다름
+
+</br>
+
+5 - null 과 undefined
 ----
 
-- 여러 가지 형태와 값을 가짐
+- null: 변수의 값을 아직 모르거나 적용할 수 없는 경우 할당
+- undefined: 자바스크립트 자체에서 사용
+</br>
+
+    let currentTemp; // 암시적으로 undefined
+    const targetTemp = null; // "아직 모르는" 값
+    currentTemp = 19.5; // currentTemp 에 값을 할당함
+    currentTemp = undefined; // currentTemp는 초기화되지 않음. 권장하지 않는 방법
+
+</br>
+</br>
+
+⭐ 객체(Object)
+=============
+
+- 여러 가지 형태와 값을 가지는 컨테이너
+- 객체의 내용물(=Property)은 바뀔 수 있지만 객체 자체는 변하지 않는다.
+- 중괄호(`{}`)를 사용해 어디부터 어디까지가 객체인지 표현한다.
+- 멤버 접근 연산자(`.`): 프로퍼티 이름이 유효한 식별자인 경우
+- 계산된 멤버 접근 연산자(`[]`): 프로퍼티 이름이 유효하거나 유효하지 않거나 사용 가능
+- 심볼 프로퍼티에 접근할 때에도 대괄호 사용
 - Array, Date, RegExp, Map, WeakMap, Set, WeakSet
 - Number, String, Boolean
+</br>
+
+    const obj = {}; // 빈 객체
+    obj.color = "yellow"; // color 프로퍼티 추가
+    obj["not an identifier"] = 3; // not an identifier 프로퍼티 추가
+    
+    const SIZE = Symbol();
+    obj[SIZE] = 8;
+
+</br>
+❗ 객체를 만듦과 동시에 프로퍼티 만드는 방법
+</br>
+
+    const sam1 = {
+        name: 'Sam',
+        age: 4,
+    };         // 프로퍼티 이름과 값은 콜론(:)으로 구분
+
+    const sam2 = { name: 'Sam', age: 4 };    // 한 줄로 선언
+
+    const sam3 = {
+        name: 'Sam',
+        classification: {         // 프로퍼티 값도 객체가 될 수 있음
+            kingdom: 'Anamalia',
+            phylum: 'Chordata',
+            class: 'Mamalia',
+        },
+    };
+
+- 객체에서 프로퍼티를 삭제하는 방법: `delete`
+</br>
+
+    delete sam3.classification;
 
 </br>
 ❗ Number 객체의 유용한 프로퍼티들
@@ -112,5 +203,44 @@
 - `Number.POSITIVE_INFINITY`: 무한수
 - `Number.NaN`: 숫자가 아닌 것(Not a Number)
 
+</br>
+</br>
 
+⭐ 배열(Array)
+=============
 
+- 특수한 객체로, 요소의 데이터 타입을 가리지 않는다.
+- 배열 리터럴은 대괄호(`[]`) 안에 배열 요소를 쉼표(`,`)로 구분하여 사용
+
+</br>
+
+    const a1 = [1, 2, 3, 4]; // 숫자로 구성된 배열
+    
+    const a2 = [1, 'two', 3, null]; // 여러 가지 타입으로 구성된 배열
+    
+    const a3 = [ // 여러 줄로 정의한 배열
+        "What the hammer? What the chain?",
+        "In what furnace was thy brain?",
+        "What the anvil? What dread grasp",
+        "Dare its deadly terrors clasp?",
+    ];
+    
+    const a4 = [ // 객체가 들어있는 배열
+        { name: "Ruby", hardness: 9 },
+        { name: "Diamond", hardness: 10 },
+        { name: "Topaz", hardness: 8 },
+    ];
+    
+    const a5 = [ // 배열이 들어있는 배열
+        [1, 3, 5],
+        [2, 4, 6],
+    ];
+    
+- 배열 요소에 접근하는 방법: 대괄호(`[]`)안에 인덱스 숫자 쓰기
+- ❗ `length` 프로퍼티는 요소의 개수 반환
+</br>
+
+    const arr = ['a', 'b', 'c'];
+    arr[0];                        // 'a'
+    arr[arr.length - 1];           // 'c'
+    
