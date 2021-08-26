@@ -72,7 +72,7 @@
     let room2 = room1;
 - `room2` 의 값은 `"conference_room_a"`가 되었다.
 </br>
-❗ `let room2 = conference_room_a` 는 에러가 발생한다. `conference_room_a`라는 식별자가 존재하지 않기 때문!
+❗  `let room2 = conference_room_a` 는 에러가 발생한다. `conference_room_a`라는 식별자가 존재하지 않기 때문!
 </br>
 </br>
 
@@ -91,7 +91,7 @@
 2 - 문자열
 ----
 - 문자열 리터럴에는 큰따옴표("), 작은따옴표('), 백틱(\`)을 사용
-- 이스케이프(\): 문자열 안에 따옴표나 백틱을 사용해야 하는 경우 또는 특수문자(ex: \n, \t)
+- 이스케이프(\\): 문자열 안에 따옴표나 백틱을 사용해야 하는 경우 또는 특수문자(ex: \n, \t)
 </br>
 
     const dialog1 = "He looked up and said \"don't do that!\" to Max.";
