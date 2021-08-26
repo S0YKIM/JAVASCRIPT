@@ -247,7 +247,7 @@
  </br>
  </br>
  
- ⭐ 날짜(Date)
+⭐ 날짜(Date)
 =============
 
 - 객체의 종류
@@ -272,4 +272,35 @@
     const arr = ['a', 'b', 'c'];
     arr[0];                        // 'a'
     arr[arr.length - 1];           // 'c'
+
+</br>
+</br>
+
+⭐ 데이터 타입 변환
+=============
+
+1 - 숫자로 바꾸기
+----
+
+- 숫자로 바꿀 수 없는 경우는 `NaN` 반환
+
+(1) Number() 객체 생성자
+</br>
+
+    const numStr = "33.3";
+    const num = Number(numStr);  // 33.3
+
+</br>
+(2) parseInt() 또는 parseFloat() 함수
+
+    const a = parseInt("16 volts", 10); // " volts"는 무시, 10진수  // 16
+    const b = parseInt("3a", 16); // 16진수 3a를 10진수로 바꿈  // 58
+    const c = parseFloat("15.5 kph"); // " kph"는 무시, 기수는 10이라고 가정 // 15.5
     
+- 배열 요소에 접근하는 방법: 대괄호(`[]`)안에 인덱스 숫자 쓰기
+- ❗ `length` 프로퍼티는 요소의 개수 반환
+</br>
+
+    const arr = ['a', 'b', 'c'];
+    arr[0];                        // 'a'
+    arr[arr.length - 1];           // 'c'
