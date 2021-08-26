@@ -355,3 +355,47 @@
     const n = 0; // 거짓 같은 값
     const b1 = !!n; // false
     const b2 = Boolean(n); // false
+
+</br>
+</br>
+
+⭐ 원시형과 참조형
+=============
+
+- 원시값은 언제나 불변하므로 원시값이 변하는 것이 아니라 복사한 값이 전달된다.
+- 객체를 복사할 때에는 객체가 아니라 해당 객체를 가리키고 있다는 사실이 복사된다.
+
+✔️ 원시형
+----
+    let a = 1; // 원본
+    let b = a; // 사본. b는 1 이지 a가 아니다.
+    a = 2; // 원본의 값을 바꿈
+    console.log(b) // 1. 사본의 값은 바뀌지 않음
+    
+    a === 2 // true
+    
+    function change (a) {
+    a = 5;
+    }
+    a = 3;
+    change(a);
+    console.log(a); // 3. 함수 안에서 변수의 값이 바뀌어도 함수 외부에서는 바뀌지 않음
+
+</br>
+
+✔️ 참조형
+----
+    let o = {a: 1};
+    let p = o; // p는 o가 '가리키고 있는 것'을 가리킴
+    o.a = 2
+    console.log(p) // {a: 2}
+    
+    let q = {a: 1};
+    q === {a: 1} // false
+    
+    function change_o (o) {
+    o.a = 999;
+    }
+    let o = {a: 1};
+    change_o(o);
+    console.log(o) // {a: 999}. 참조를 전달하므로 함수 안에서 객체를 변경하면 함수 외부에서도 바뀐다.
