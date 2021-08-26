@@ -244,3 +244,32 @@
     arr[0];                        // 'a'
     arr[arr.length - 1];           // 'c'
     
+ </br>
+ </br>
+ 
+ ⭐ 날짜(Date)
+=============
+
+- 객체의 종류
+- `new Date()`: 현재 날짜와 시간
+- `new Date(a, b, c)`: 특정 날짜(연, 월, 일)
+- `new Date(a, b, c, d, e)`: 특정 날짜와 시간(연, 월, 일, 시, 분)
+
+</br>
+
+    const now = new Date();
+    now; // Fri Dec 16 2016 09:20:16 GMT+0900 (KST)
+    
+    const halloween = new Date(2016, 9, 31);
+    // 월은 0 부터 시작하므로 10월을 의미
+    
+    const halloweenParty = new Date(2016, 9, 31, 19, 0); // 19:00 = 7:00 pm
+    
+- 배열 요소에 접근하는 방법: 대괄호(`[]`)안에 인덱스 숫자 쓰기
+- ❗ `length` 프로퍼티는 요소의 개수 반환
+</br>
+
+    const arr = ['a', 'b', 'c'];
+    arr[0];                        // 'a'
+    arr[arr.length - 1];           // 'c'
+    
