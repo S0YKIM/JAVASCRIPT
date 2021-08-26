@@ -266,12 +266,6 @@
     const halloweenParty = new Date(2016, 9, 31, 19, 0); // 19:00 = 7:00 pm
     
 - 배열 요소에 접근하는 방법: 대괄호(`[]`)안에 인덱스 숫자 쓰기
-- ❗ `length` 프로퍼티는 요소의 개수 반환
-</br>
-
-    const arr = ['a', 'b', 'c'];
-    arr[0];                        // 'a'
-    arr[arr.length - 1];           // 'c'
 
 </br>
 </br>
@@ -300,12 +294,6 @@
     const c = parseFloat("15.5 kph"); // " kph"는 무시, 기수는 10이라고 가정 // 15.5
     
 - 배열 요소에 접근하는 방법: 대괄호(`[]`)안에 인덱스 숫자 쓰기
-- ❗ `length` 프로퍼티는 요소의 개수 반환
-</br>
-
-    const arr = ['a', 'b', 'c'];
-    arr[0];                        // 'a'
-    arr[arr.length - 1];           // 'c'
 
 </br>
 
