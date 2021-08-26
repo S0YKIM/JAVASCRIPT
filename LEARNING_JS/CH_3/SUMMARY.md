@@ -92,8 +92,10 @@
 - 여러 가지 형태와 값을 가짐
 - Array, Date, RegExp, Map, WeakMap, Set, WeakSet
 - Number, String, Boolean
+
 </br>
 ❗ Number 객체의 유용한 프로퍼티들
+
 - Number.EPSILON: 1에 더했을 때 1과 구분되는 값을 만드는 가장 작은 값
 - Number.MAX_SAFE_INTEGER: 표현 가능한 가장 큰 정수
 - Number.MIN_SAFE_INTEGER: 표현 가능한 가장 작은 정수
