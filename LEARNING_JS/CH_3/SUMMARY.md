@@ -284,7 +284,7 @@
 
 - 숫자로 바꿀 수 없는 경우는 `NaN` 반환
 
-(1) Number() 객체 생성자
+✔️ Number() 객체 생성자
 ----
 </br>
 
@@ -292,7 +292,7 @@
     const num = Number(numStr);  // 33.3
 
 </br>
-(2) parseInt() 또는 parseFloat() 함수
+✔️ parseInt() 또는 parseFloat() 함수
 ----
 
     const a = parseInt("16 volts", 10); // " volts"는 무시, 10진수  // 16
@@ -308,13 +308,13 @@
     arr[arr.length - 1];           // 'c'
 
 </br>
-(3) valueOf() 메서드
+✔️ valueOf() 메서드
 ----
     const d = new Date(); // 현재 날짜
     const ts = d.valueOf(); // UTC 1970년 1월 1일 자정으로부터 몇 밀리초가 지났는지 나타내는 숫자
     
 </br>
-(4) 조건 연산자
+✔️ 조건 연산자
 ----
     const b = true;
     const n = b ? 1 : 0;  // 불리언 값을 1(True) 또는 0(False)로 바꿈
