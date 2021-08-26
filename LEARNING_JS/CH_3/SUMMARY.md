@@ -286,12 +286,12 @@
 
 ✔️ Number() 객체 생성자
 ----
-</br>
 
     const numStr = "33.3";
     const num = Number(numStr);  // 33.3
 
 </br>
+
 ✔️ parseInt() 또는 parseFloat() 함수
 ----
 
@@ -308,14 +308,18 @@
     arr[arr.length - 1];           // 'c'
 
 </br>
+
 ✔️ valueOf() 메서드
 ----
+
     const d = new Date(); // 현재 날짜
     const ts = d.valueOf(); // UTC 1970년 1월 1일 자정으로부터 몇 밀리초가 지났는지 나타내는 숫자
     
 </br>
+
 ✔️ 조건 연산자
 ----
+
     const b = true;
     const n = b ? 1 : 0;  // 불리언 값을 1(True) 또는 0(False)로 바꿈
 
