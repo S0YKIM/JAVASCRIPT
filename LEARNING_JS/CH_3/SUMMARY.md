@@ -279,12 +279,13 @@
 ⭐ 데이터 타입 변환
 =============
 
-1 - 숫자로 바꾸기
+1 - 숫자로 변환
 ----
 
 - 숫자로 바꿀 수 없는 경우는 `NaN` 반환
 
 (1) Number() 객체 생성자
+----
 </br>
 
     const numStr = "33.3";
@@ -292,6 +293,7 @@
 
 </br>
 (2) parseInt() 또는 parseFloat() 함수
+----
 
     const a = parseInt("16 volts", 10); // " volts"는 무시, 10진수  // 16
     const b = parseInt("3a", 16); // 16진수 3a를 10진수로 바꿈  // 58
@@ -304,3 +306,48 @@
     const arr = ['a', 'b', 'c'];
     arr[0];                        // 'a'
     arr[arr.length - 1];           // 'c'
+
+</br>
+(3) valueOf() 메서드
+----
+    const d = new Date(); // 현재 날짜
+    const ts = d.valueOf(); // UTC 1970년 1월 1일 자정으로부터 몇 밀리초가 지났는지 나타내는 숫자
+    
+</br>
+(4) 조건 연산자
+----
+    const b = true;
+    const n = b ? 1 : 0;  // 불리언 값을 1(True) 또는 0(False)로 바꿈
+
+</br>
+</br>
+
+2 - 문자열로 변환
+----
+
+- `toString()` 메서드 사용
+</br>
+
+    const n = 33.5;
+    const s = n.toString();
+    s; // "33.5" - 문자열
+
+- 배열에 사용하는 경우 각 요소를 쉼표로 연결한 문자열을 반환
+</br>
+    
+    const arr = [1, true, "hello"];
+    arr.toString(); // "1,true,hello"
+
+</br>
+</br>
+
+3 - 불리언으로 변환
+-----
+
+- `부정 연산자(!)`: 모든 값을 불리언으로 바꿈
+- 참 같은 값에 사용하면 `false`로 바뀌고, 한번 더 사용하면 `True`를 반환한다
+</br>
+    
+    const n = 0; // 거짓 같은 값
+    const b1 = !!n; // false
+    const b2 = Boolean(n); // false
