@@ -36,7 +36,7 @@
 
     const userRoles = new Map();
 
-(2) 맵의 set() 메서드를 사용해 사용자 역할을 할당한다.
+(2) 맵의 `set()` 메서드를 사용해 사용자 역할을 할당한다.
 </br>
 
     userRoles.set(u1, 'User');
@@ -50,7 +50,25 @@
         .set(u1, 'User')
         .set(u2, 'User')
         .set(u3, 'Admin');
+
+- 또는 생성자에 배열의 배열을 넘기는 식으로도 가능하다.
 </br>
 
-(3) 
+    const userRoles = new Map([
+        [u1, 'User'],
+        [u2, 'User'],
+        [u3, 'Admin'],
+    ]);
+
+(3) 사용자의 역할을 알아내기 위해서는 `get()` 메서드를 사용한다. `has()` 메서드는 맵에 키가 존재하는지 여부를 확인해준다.
 </br>
+
+    userRoles.has(u1); // true
+    userRoles.get(u1); // "User"
+    userRoles.has(u4); // false
+    userRoles.get(u4); // undefined // 존재하지 않는 키에 get()을 호출하면 반환
+    
+(4) 맵에 이미 존재하는 키에 `set()`을 호출하면 값이 교체된다.
+</br>
+    
+
