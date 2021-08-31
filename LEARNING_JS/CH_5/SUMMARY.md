@@ -123,6 +123,11 @@
     const result = doIt && x++;   // result 는 0
     
 - 피연산자가 불리언이 아니라면, 결과를 결정한 값이 반환됨
+- ❗ if 문을 단축 평가하는 OR 표현식으로 바꾸는법
+</br>
+
+    if(!options) options = {};
+    options = options | | {};
 
 </br>
 </br>
@@ -250,3 +255,11 @@
     rest; // [3, 4, 5]
 </br>
 </br>
+
+- 배열 요소 서로 바꾸기
+</br>
+
+    let a = 5, b = 10;
+    [a, b] = [b, a];
+    a; // 10
+    b; // 5
