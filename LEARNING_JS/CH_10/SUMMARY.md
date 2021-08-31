@@ -224,4 +224,41 @@
     roles.delete("Admin");      // true
     roles; // Set [ "User" ]
     roles.delete("Admin");      // false
+
+</br>
+</br>
+
+⭐ 위크셋(WeakSet)
+============
+
+- 객체만 포함할 수 있다.
+- 해당 객체들은 가비지 콜렉션의 대상이 된다.
+- '주어진 객체가 셋 안에 존재하는지?' 확인하는 용도 이외에는 쓰이지 않는다.
+</br>
+
+✔️사용 예시
+----
+
+- 산타 클로스가 어떤 아이가 우는 아이인지 확인해서 선물 대신 석탄을 놓고 온다고 하자.
+</br>
+
+    const naughty = new WeakSet();
     
+    const children = [
+        { name: "Suzy" },
+        { name: "Derek" },
+    ];
+    
+    naughty.add(children[1]);
+    
+    for(let child of children) {
+        if(naughty.has(child))
+            console.log(`Coal for ${child.name}!`);
+        else
+            console.log(`Presents for ${child.name}!`);
+    }
+</br>
+
+- children[1], 즉 Derek 을 naughty 의 요소에 추가했다.
+- 따라서 Suzy 에게는 선물을, Derek 에게는 석탄을 주게된다.
+
