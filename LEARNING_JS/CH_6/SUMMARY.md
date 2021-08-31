@@ -169,15 +169,101 @@
 ⭐ 익명 함수
 ============
 
-- 호출한 메서드를 소유하는 객체
-- 아래 예시에서 `this` 는 `o` 에 묶인다.
+- 함수에 식별자가 주어지지 않음
+- 함수 표현식으로 익명 함수를 만들고 변수에 할당
+- 아래의 경우 `f()` 로 함수를 호출할 수 있다.
 </br>
 
-    const o = {
-    name: 'Wallace',
-    speak() { return `My name is ${this.name}!`; },
-    }
-    
-    o.speak(); // "My name is Wallace!
+    const f = function() {
+    // ...
+    };
 </br>
+</br>
+
+⭐ 화살표 표기법
+============
+
+- 화살표 함수는 항상 익명이다.
+- `function` 을 생략 가능
+- 함수에 매개변수가 단 하나 뿐이라면 `괄호 ( )`도 생략 가능
+- 함수 바디가 표현식 하나라면 `중괄호 { }` 와 `return` 문도 생략 가능
+</br>
+
+    const f1 = function() { return "hello!"; }
+    // 또는
+    const f1 = () => "hello!";
+    
+    const f2 = function(name) { return `Hello, ${name}!`; }
+    // 또는
+    const f2 = name = > `Hello, ${name}!`;
+    
+    const f3 = function(a, b) { return a + b; }
+    // 또는
+    const f3 = (a,b) => a + b;
+</br>
+</br>
+
+⭐ this 의 값을 바꿀 수 있는 함수: call, apply, bind
+============
+
+1 - call
+----
+
+- this 를 특정 값으로 지정할 수 있다.
+- 함수를 호출하면서 call을 사용하고 this로 사용할 객체를 넘기면 해당 함수가 주어진 객체의 메서드인 것처럼 사용 가능
+</br>
+
+    const bruce = { name: "Bruce" };
+    const madeline = { name: "Madeline" };
+    // 이 함수는 어떤 객체에도 연결되지 않았지만 this를 사용합니다.
+    function greet() {
+    return `Hello, I'm ${this.name}!`;
+    }
+    greet(); // "Hello, I'm undefined!" - this는 어디에도 묶이지 않았습니다.
+    greet.call(bruce); // "Hello, I'm Bruce!" - this는 bruce입니다.
+    greet.call(madeline); // "Hello, I'm Madeline!" - this는 madeline입니다.
+</br>
+
+
+    function update(birthYear, occupation) {
+    this.birthYear = birthYear;
+    this.occupation = occupation;
+    }
+    update.call(bruce, 1949, 'singer');
+    // bruce는 이제 { name: "Bruce", birthYear: 1949,
+    // occupation: "singer" } 입니다.
+    update.call(madeline, 1942, 'actress');
+    // madeline은 이제 { name: "Madeline", birthYear: 1942,
+    // occupation: "actress" } 입니다.
+</br>
+
+2 - apply
+----
+
+- `call`은 일반적인 함수와 마찬가지로 매개변수를 직접 받지만,
+- `apply`는 매개변수를 배열로 받는다는 점이 차이
+</br>
+
+    update.apply(bruce, [1955, "actor"]);
+    // bruce는 이제 { name: "Bruce", birthYear: 1955,
+    // occupation: "actor" } 입니다.
+    update.apply(madeline, [1918, "writer"]);
+    // madeline은 이제 { name: "Madeline", birthYear: 1918,
+    // occupation: "writer" } 입니다.
+</br>
+
+3 - bind
+----
+
+- 함수의 `this` 값을 영구히 바꾼다.
+</br>
+
+    const updateBruce = update.bind(bruce);
+    updateBruce(1904, "actor");
+    // bruce는 이제 { name: "Bruce", birthYear: 1904,
+    // occupation: "actor" } 입니다.
+    updateBruce.call(madeline, 1274, "king");
+    // bruce는 이제 { name: "Bruce", birthYear: 1274,
+    // occupation: "king" } 입니다.
+    // madeline은 변하지 않았습니다.
 </br>
