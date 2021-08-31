@@ -89,13 +89,13 @@
 </br>
 
     for(let u of userRoles.keys())
-    console.log(u.name);
+        console.log(u.name);
 
     for(let r of userRoles.values())
-    console.log(r);
+        console.log(r);
 
     for(let ur of userRoles.entries())
-    console.log(`${ur[0].name}: ${ur[1]}`);
+        console.log(`${ur[0].name}: ${ur[1]}`);
 
 - 맵도 분해 가능하므로 분해해서 더욱 자연스러운 코드로 만들어보자
 </br>
@@ -262,3 +262,9 @@
 - children[1], 즉 Derek 을 naughty 의 요소에 추가했다.
 - 따라서 Suzy 에게는 선물을, Derek 에게는 석탄을 주게된다.
 
+
+References
+-----
+
+Javascript 객체(object)의 키(key)와 값(value)을 배열로 얻기
+http://www.gisdeveloper.co.kr/?p=11005
