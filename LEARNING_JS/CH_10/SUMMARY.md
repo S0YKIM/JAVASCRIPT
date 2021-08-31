@@ -259,7 +259,7 @@
     }
 </br>
 
-- children[1], 즉 Derek 을 naughty 의 요소에 추가했다.
+- children[1], 즉 { name: Derek } 을 naughty 의 요소에 추가했다.
 - 따라서 Suzy 에게는 선물을, Derek 에게는 석탄을 주게된다.
 
 
