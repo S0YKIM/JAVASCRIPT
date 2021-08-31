@@ -18,5 +18,37 @@
     키는 반드시 문자열이나 심볼이어야 하므로 객체를 키로 써서 값과 연결할 수 없다.
     객체는 프로퍼티 순서를 전혀 보장하지 않는다.
 
+- 이러한 결함을 해결한 것이 `맵(Map)` 객체!
+
+✔️예시
+----
+
+- 사용자 객체 각각에게 맵을 이용해 역할을 부여해보자.
+</br>
+
+    const u1 = { name: 'Cynthia' };
+    const u2 = { name: 'Jackson' };
+    const u3 = { name: 'Olive' };
+    const u4 = { name: 'James' };
+
+1 - 먼저 맵을 생성한다.
+</br>
+
+    const userRoles = new Map();
+
+- 맵의 set() 메서드를 사용해 사용자 역할을 할당한다.
+</br>
+
+    userRoles.set(u1, 'User');
+    userRoles.set(u2, 'User');
+    userRoles.set(u3, 'Admin');
+
+- 또는 다음과 같이 체인으로 연결해 더욱 간결하게 사용 가능하다.
+</br>
+
+    userRoles
+        .set(u1, 'User')
+        .set(u2, 'User')
+        .set(u3, 'Admin');
 </br>
 </br>
