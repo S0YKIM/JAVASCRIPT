@@ -36,7 +36,7 @@
 
     const userRoles = new Map();
 
-- 맵의 set() 메서드를 사용해 사용자 역할을 할당한다.
+(2) 맵의 set() 메서드를 사용해 사용자 역할을 할당한다.
 </br>
 
     userRoles.set(u1, 'User');
