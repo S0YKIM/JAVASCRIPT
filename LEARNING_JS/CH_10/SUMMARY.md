@@ -145,9 +145,10 @@
 - 일반적으로 자바스크립트에서는 코드 어딘가에서 객체를 참조하면 해당 객체를 메모리에 계속 유지
 - 하지만 위크맵에서는 가비지 콜렉션 중인 객체를 노출할 위험이 크기 때문에 메모리에 유지하지 않는다.
 - 따라서 위크맵은 `이터러블(Iterable)`이 될 수 없다.
-- 위크맵의 이러한 특성은 객체 인스턴스의 전용(Private)키를 저장하기에 알맞다.
+- 위크맵의 이러한 특성은 객체 인스턴스의 `전용(Private)키`를 저장하기에 알맞다.
 
-</br>
+✔️사용 예시
+----
 
     const SecretHolder = (function() {
         const secrets = new WeakMap();
@@ -160,3 +161,67 @@
             }
         }
     })();
+
+- 비밀을 저장할 때는 setSecret 메서드를 써야하고, 보려할 때는 getSecret 메서드를 써야한다.
+</br>
+
+    const a = new SecretHolder();
+    const b = new SecretHolder();
+
+    a.setSecret('secret A');
+    b.setSecret('secret B');
+    a.getSecret(); // "secret A"
+    b.getSecret(); // "secret B"
+    
+</br>
+</br>
+
+⭐ 셋(Set)
+============
+
+- 중복을 허락하지 않는 데이터 집합
+- 장점: 추가하려는 것이 셋에 이미 있는지 확인할 필요가 없다. 이미 있다면 아무 일도 일어나지 않는다.
+</br>
+
+✔️사용 예시
+----
+
+- 이번에는 하나의 사용자에게 여러 역할을 할당해보자.
+- "User" 역할은 모든 사용자에게 할당되지만, 관리자는 "User" 역할과 "Admin" 역할을 동시에 가진다.
+</br>
+
+(1) 먼저 `Set` 인스턴스를 만든다.
+</br>
+
+    const roles = new Set();
+</br>
+(2) `add` 메서드를 사용해 사용자 역할을 추가해보자.
+</br>
+
+    roles.add("User");          // Set [ "User" ]
+</br>
+(3) `add` 메서드를 다시 호출해 해당 사용자에게 관리자 역할도 추가해보자.
+</br>
+
+    roles.add("Admin");         // Set [ "User", "Admin" ]
+</br>
+
+(4) 맵과 마찬가지로 `size` 프로퍼티 사용 가능
+</br>
+
+    roles.size;                 // 2
+</br>
+(5) 이미 존재하는 요소를 추가해도 아무 일도 일어나지 않는다.
+</br>
+
+    roles.add("User");          // Set [ "User", "Admin" ]
+    roles.size;                 // 2
+</br>
+
+(6) `delete()` 메서드로 역할을 제거한다. 제거에 성공하면 `True`, 실패하면 `False` 반환
+</br>
+
+    roles.delete("Admin");      // true
+    roles; // Set [ "User" ]
+    roles.delete("Admin");      // false
+    
