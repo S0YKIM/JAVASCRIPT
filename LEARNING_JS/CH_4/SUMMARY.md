@@ -105,33 +105,116 @@
 1 - while 문
 ----
 
-while(condition)
-    statement
+    while(condition)
+        statement
     
 </br>
 
 2 - if else 문
 ----
 
-if(condition)
-    statement1
-[else
-    statement2]
+    if(condition)
+         statement1
+    [else
+        statement2]
 
 </br>
 
 3 - do while 문
 ----
 
-do
-    statement
-while(condition);
+    do
+        statement
+    while(condition);
 
 </br>
 
 4 - for 문
 ----
 
-for([initialization]; [condition]; [final-expression])
-    statement
+    for([initialization]; [condition]; [final-expression])
+        statement
+
+- 쉼표 연산자(,)로 초기화와 마지막 표현식에 여러 문을 결합 가능
+</br>
+
+    for(let temp, i=0, j=1; j<30; temp = i, i = j, j = i + temp)
+        console.log(j);
+        
+- 조건을 생략하면 항상 참이므로 무한 루프
+</br>
+
+    for(;;) console.log("I will repeat forever!");
     
+</br>
+</br>
+
+5 - switch 문
+----
+
+    switch(expression) {
+        case value1:
+             // expression을 평가한 결과가 value1일 때 실행
+             [break;]
+        case value2:
+             // expression을 평가한 결과가 value2일 때 실행
+            [break;]
+        default:
+            // expression을 평가한 결과에 맞는 것이 없을 때 실행됩니다.
+            [break;]
+    }
+    
+- 마지막 default 뒤에는 case 가 없으므로 break 를 생략해도 되지만, 항상 쓰는 습관이 좋다.
+- 다음과 같이 공백 없이 쓰면 간결하게 표현 가능
+
+</br>
+
+    switch(totalBet) {
+        case 7: totalBet = funds; break;
+        case 11: totalBet = 0; break;
+        case 13: totalBet = 0; break;
+        case 21: totalBet = 21; break;
+    }
+
+</br>
+</br>
+
+6 - for...in 루프
+----
+
+    for(variable in object)
+        statement
+        
+- 객체의 프로퍼티에 루프를 실행하도록 설계된 루프
+
+</br>
+
+    const player = { name: 'Thomas', rank: 'Midshipman', age: 25 };
+    for(let prop in player) {
+        if(!player.hasOwnProperty(prop)) continue;
+        console.log(prop + ': ' + player[prop]);
+    }
+
+</br>
+</br>
+
+7 - for...of 루프
+----
+
+    for(variable of object)
+        statement
+
+- 배열은 물론 이터러블 객체에 모두 사용할 수 있는 범용적인 루프 (9장)
+- 배열에 루프를 실행해야 하지만 각 요소의 인덱스를 알 필요는 없을 때 유용
+</br>
+
+    const hand = [randFace(), randFace(), randFace()];
+    for(let face of hand)
+        console.log(`You rolled...${face}!`);
+
+- ❗ 인덱스를 알아야 하는 경우 일반적인 for 루프 사용
+</br>
+
+    const hand = [randFace(), randFace(), randFace()];
+    for(let i=0; i<hand.length; i++)
+        console.log(`Roll ${i+1}: ${hand[i]}`);
