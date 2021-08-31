@@ -148,3 +148,105 @@
 - 만약에 괄호가 없이 z = x++, y++; 이라면 z 는 0 이 된다
 </br>
 </br>
+
+⭐ 연산자 그룹
+============
+
+1 - 비트 연산자
+----
+
+- & : 비트 AND : 0b1010 & 0b1100 // 결과: 0b1000
+- | : 비트 OR : 0b1010 | 0b1100 // 결과: 0b1110
+- ^ : 비트 XOR : 0b1010 ^ 0b1100 // 결과: 0b0110
+- ~ : 비트 NOT : ~0b1010 // 결과: 0b0101
+- << : 왼쪽 시프트 : 0b1010 << 1 // 결과: 0b10100
+- >> : 부호가 따라가는(Sign-propagating) 오른쪽 시프트
+- >>> : 0으로 채우는(Zero-fill) 오른쪽 시프트
+</br>
+</br>
+
+2 - typeof 연산자
+----
+
+- 피연산자의 타입을 나타내는 문자열을 반환
+- typeof undefined "undefined"
+- typeof null "object"
+- typeof {} "object"
+- typeof true "boolean"
+- typeof 1 "number"
+- typeof "" "string"
+- typeof Symbol() "symbol"
+- typeof function() {} "function"
+
+</br>
+</br>
+
+3 - void 연산자
+----
+
+- 피연산자를 평가한 후 undefined를 반환
+</br>
+
+    <a href="javascript:void 0">Do nothing.</a>
+    
+</br>
+</br>
+
+4 - 할당 연산자
+----
+
+</br>
+</br>
+
+
+⭐ 해체 할당(Destructuring Assignment)
+============
+
+- 객체나 배열을 변수로 ‘해체’할 수 있다.
+</br>
+
+    // 객체 선언
+    const obj = { b: 2, c: 3, d: 4 };
+    
+    // 해체 할당
+    const {a, b, c} = obj;
+    a; // undefined: obj에는 "a" 프로퍼티가 없습니다.
+    b; // 2
+    c; // 3
+    d; // ReferenceError: "d"는 정의되지 않았습니다.
+
+- 할당만으로 객체 할당을 하려면 괄호가 필요하다.
+</br>
+
+    const obj = { b: 2, c: 3, d: 4 };
+    let a, b, c;
+    
+    // 에러가 일어납니다.
+    {a, b, c} = obj;
+    
+    // 동작합니다.
+    ({a, b, c} = obj);
+    
+- ❗ 배열을 해체 할당하기
+</br>
+
+    // 배열 선언
+    const arr = [1, 2, 3];
+    
+    // 배열 해체 할당
+    let [x, y] = arr;
+    x; // 1
+    y; // 2
+    z; // ReferenceError: "z"는 정의되지 않았습니다.
+    
+- ❗ `확산 연산자(...)` 이용하여 남은 요소 새 배열에 할당하기
+</br>
+
+    const arr = [1, 2, 3, 4, 5];
+    
+    let [x, y, ...rest] = arr;
+    x; // 1
+    y; // 2
+    rest; // [3, 4, 5]
+</br>
+</br>
