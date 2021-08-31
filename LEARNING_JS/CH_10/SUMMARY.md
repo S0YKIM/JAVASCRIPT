@@ -31,7 +31,7 @@
     const u3 = { name: 'Olive' };
     const u4 = { name: 'James' };
 
-1. 먼저 맵을 생성한다.
+(1) 먼저 맵을 생성한다.
 </br>
 
     const userRoles = new Map();
