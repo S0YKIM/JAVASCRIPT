@@ -272,3 +272,6 @@ References
 
 Javascript 객체(object)의 키(key)와 값(value)을 배열로 얻기
 http://www.gisdeveloper.co.kr/?p=11005
+
+프로토타입 체인
+https://iamsjy17.github.io/javascript/2019/06/10/js33_17_prototype.html#:~:text=%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85%20%EC%B2%B4%EC%9D%B8%20%28Prototype%20Chain%29%20%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EB%8A%94%20%ED%8A%B9%EC%A0%95%20%EA%B0%9D%EC%B2%B4%EC%9D%98%20%ED%94%84%EB%A1%9C%ED%8D%BC%ED%8B%B0%EB%82%98,%EC%A1%B4%EC%9E%AC%ED%95%98%EC%A7%80%20%EC%95%8A%EB%8A%94%EB%8B%A4%EB%A9%B4%20__proto__%EA%B0%80%20%EA%B0%80%EB%A6%AC%ED%82%A4%EB%8A%94%20%EB%A7%81%ED%81%AC%EB%A5%BC%20%EB%94%B0%EB%9D%BC%20%EB%B6%80%EB%AA%A8%20
