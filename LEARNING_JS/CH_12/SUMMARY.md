@@ -8,12 +8,12 @@
 </br>
 
     const book = [
-    "Twinkle, twinkle, little bat!",
-    "How I wonder what you're at!",
-    "Up above the world you fly,",
-    "Like a tea tray in the sky.",
-    "Twinkle, twinkle, little bat!",
-    "How I wonder what you're at!",
+        "Twinkle, twinkle, little bat!",
+        "How I wonder what you're at!",
+        "Up above the world you fly,",
+        "Like a tea tray in the sky.",
+        "Twinkle, twinkle, little bat!",
+        "How I wonder what you're at!",
     ];
 </br>
 
@@ -55,6 +55,34 @@
     const it = book.values();
     let current = it.next();
     while(!current.done) {
-    console.log(current.value);
-    current = it.next();
+        console.log(current.value);
+        current = it.next();
     }
+    
+    // Twinkle, twinkle, little bat!
+    // How I wonder what you're at!
+    // Up above the world you fly,
+    // Like a tea tray in the sky.
+    // Twinkle, twinkle, little bat!
+    // How I wonder what you're at!
+
+</br>
+
+- 모든 이터레이터는 독립적
+- 따라서 새 이터레이터를 만들 때마다 처음부터 시작
+
+</br>
+
+    const it1 = book.values();
+    const it2 = book.values();
+    // 어느 이터레이터도 아직 시작하지 않음
+    
+    // it1 으로 1-2 페이지를 읽어보자.
+    it1.next(); // { value: "Twinkle, twinkle, little bat!", done: false }
+    it1.next(); // { value: "How I wonder what you're at!", done: false }
+    
+    // it2로 1 페이지를 읽어보자.
+    it2.next(); // { value: "Twinkle, twinkle, little bat!", done: false }
+    
+    // it1으로 한 페이지를 더 읽어보자. (3페이지)
+    it1.next(); // { value: "Up above the world you fly,", done: false }
