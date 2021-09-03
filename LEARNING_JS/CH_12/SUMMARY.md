@@ -137,8 +137,7 @@
     log.add("spotted whale");
     log.add("spotted another vessel");
     //...
-    
-    // 로그를 배열처럼 순회합니다!
+
     for(let entry of log) {
         console.log(`${entry.message} @ ${entry.timestamp}`);
     }
@@ -218,7 +217,7 @@
 </br>
 
 4. 문법은 `function` 뒤에 애스터리스크(`*`)를 붙인다.
-- `return` 대신 `yield` 키워드를 쓸 수도 있다.
+- `return` 외에 `yield` 키워드를 쓸 수 있다.
 </br>
 
 ✔️사용 예시: 무지개 색깔을 반환하는 제너레이터를 만들어보자.
