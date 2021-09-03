@@ -162,3 +162,59 @@
             }
         }
     }
+
+</br>
+</br>
+
+✔️사용 예시: 피보나치 수열을 만들어보자.
+</br>
+
+    class FibonacciSequence {
+        [Symbol.iterator]() {
+            let a = 0, b = 1;
+            return {
+                next() {
+                    let rval = { value: b, done: false };
+                    b + = a;
+                    a = rval.value;
+                    return rval;
+                }
+            };
+        }
+    }
+    
+    const fib = new FibonacciSequence();
+    let i = 0;
+    for(let n of fib) {
+        console.log(n);
+        if(++i > 9) break;
+    }
+</br>
+
+- 무한루프에 빠지지 않도록 `if` 제어문을 추가해준다. 
+
+</br>
+</br>
+
+⭐ 제너레이터(Generator)
+============
+
+- 이터레이터를 사용해 자신의 실행을 제어하는 함수
+- 다음의 특징들을 제외하면 일반적인 함수와 같다.
+</br>
+
+1. 언제든지 호출자에게 제어권을 넘길 수 있다. (yield)
+- 일반적인 함수의 호출자는 매개변수 외에는 함수의 실행을 제어할 수 있는 방법이 없다.
+- 제너레이터에서는 함수의 실행을 개별적 단계로 나누어 함수의 실행을 제어한다.
+</br>
+
+2. 이터레이터의 `next` 메서드를 호출함에 따라 실행된다.
+- 제너레이터를 호출한 즉시 실행되는 것이 아니다.
+- 이터레이터를 반환하여 이터레이터의 `next` 메서드를 호출한다.
+</br>
+
+3. 문법은 `function` 뒤에 애스터리스크(`*`)를 붙인다.
+- `return` 대신 `yield` 키워드를 쓸 수도 있다.
+</br>
+
+✔️사용 예시: 무지개 색깔을 반환하는 제너레이터를 만들어보자.
