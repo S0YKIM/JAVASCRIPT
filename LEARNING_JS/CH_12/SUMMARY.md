@@ -97,3 +97,18 @@
 
 ✔️사용 예시: 메시지에 타임스탬프를 붙이는 로그 클래스를 만들어보자.
 </br>
+
+1. 내적으로 타임 스탬프가 붙은 메시지는 배열에 저장한다.
+</br>
+
+    class Log {
+        constructor() {
+            this.messages = [];
+        }
+        add(message) {
+            this.messages.push({ message, timestamp: Date.now() });
+        }
+    }
+</br>
+
+2. `Symbol.iterator`
