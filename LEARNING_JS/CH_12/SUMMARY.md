@@ -16,6 +16,7 @@
     "How I wonder what you're at!",
     ];
 </br>
+
 1. `values()` 메서드를 사용해 이터레이터를 생성
 </br>
 
@@ -27,6 +28,8 @@
 </br>
 
 (1) `value` 프로퍼티: 지금 보이는 페이지
+</br>
+
 (2) `done` 프로퍼티: 마지막 페이지를 읽으면 `true`, 아니면 `false`
 </br>
 
