@@ -208,13 +208,56 @@
 - 제너레이터에서는 함수의 실행을 개별적 단계로 나누어 함수의 실행을 제어한다.
 </br>
 
-2. 이터레이터의 `next` 메서드를 호출함에 따라 실행된다.
-- 제너레이터를 호출한 즉시 실행되는 것이 아니다.
-- 이터레이터를 반환하여 이터레이터의 `next` 메서드를 호출한다.
+2. 제너레이터를 호출한 즉시 실행되는 것이 아니다.
+- 이터레이터를 반환하고 이터레이터의 `next` 메서드를 호출함으로써 실행횐다.
 </br>
 
-3. 문법은 `function` 뒤에 애스터리스크(`*`)를 붙인다.
+3. 제너레이터와 호출자 사이에 양방향 통신이 가능하다.
+- 통신은 `yield` 표현식을 통해 이루어진다.
+- `yield` 표현식의 값은 `next` 메서드를 호출할 때에 제공되는 매개변수이다.
+</br>
+
+4. 문법은 `function` 뒤에 애스터리스크(`*`)를 붙인다.
 - `return` 대신 `yield` 키워드를 쓸 수도 있다.
 </br>
 
 ✔️사용 예시: 무지개 색깔을 반환하는 제너레이터를 만들어보자.
+</br>
+
+1. 애스터리스크(`*`) 기호를 써서 제너레이터를 생성한다.
+</br>
+
+    function* rainbow() { //
+        yield 'red';
+        yield 'orange';
+        yield 'yellow';
+        yield 'green';
+        yield 'blue';
+        yield 'indigo';
+        yield 'violet';
+    }
+</br>
+
+2. 제너레이터가 반환한 이터레이터를 이용하여 단계별로 진행한다.
+</br>
+
+    const it = rainbow();
+    it.next(); // { value: "red", done: false }
+    it.next(); // { value: "orange", done: false }
+    it.next(); // { value: "yellow", done: false }
+    it.next(); // { value: "green", done: false }
+    it.next(); // { value: "blue", done: false }
+    it.next(); // { value: "indigo", done: false }
+    it.next(); // { value: "violet", done: false }
+    it.next(); // { value: undefined, done: true }
+</br>
+
+3. 제너레이터가 반환한 이터레이터는 `for...of` 루프에서도 쓸 수 있다.
+</br>
+
+    for(let color of rainbow()) {
+        console.log(color);
+    }
+</br>
+</br>
+
