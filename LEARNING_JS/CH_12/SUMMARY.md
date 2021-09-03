@@ -111,4 +111,54 @@
     }
 </br>
 
-2. `Symbol.iterator`
+2. `Symbol.iterator`메서드를 `Log` 클래스에 추가
+- 로그를 배열을 조작하는 것처럼 다루기 위해서 이터레이션 프로토콜이 필요 
+- 로그를 기록한 항목을 순회(iterate)하기 위해서 이터레이터 생성
+</br>
+
+    class Log {
+        constructor() {
+            this.messages = [];
+        }
+        add(message) {
+            this.messages.push({ message, timestamp: Date.now() });
+        }
+        [Symbol.iterator]() {
+            return this.messages.values();
+        }
+    }
+</br>
+
+3. `Log` 인스턴스를 배열처럼 순회 가능!
+</br>
+
+    const log = new Log();
+    log.add("first day at sea");
+    log.add("spotted whale");
+    log.add("spotted another vessel");
+    //...
+    
+    // 로그를 배열처럼 순회합니다!
+    for(let entry of log) {
+        console.log(`${entry.message} @ ${entry.timestamp}`);
+    }
+</br>
+
+4. 또는 다음과 같이 직접 이터레이터를 만들 수도 있다.
+</br>
+
+    class Log {
+        //...
+    
+        [Symbol.iterator]() {
+            let i = 0;
+            const messages = this.messages;
+            return {
+                next() {
+                    if(i > = messages.length)
+                        return { value: undefined, done: true };
+                    return { value: messages[i++], done: false };
+                }
+            }
+        }
+    }
