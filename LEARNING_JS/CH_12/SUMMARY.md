@@ -43,3 +43,18 @@
     it.next(); // { value: undefined, done: true }
     it.next(); // { value: undefined, done: true }
 </br>
+
+- ❗ 배열의 마지막 요소 이후의 value 는 `undefined`가 되지만 `next()`는 계속 호출 가능!
+
+</br>
+</br>
+
+⭐ 이터레이터와 while 루프를 사용해 for...of 루프 흉내내기
+============
+
+    const it = book.values();
+    let current = it.next();
+    while(!current.done) {
+    console.log(current.value);
+    current = it.next();
+    }
