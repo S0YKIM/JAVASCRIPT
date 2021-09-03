@@ -331,3 +331,35 @@
 </br>
 </br>
 
+⭐ 제너레이터와 리턴(return)
+============
+
+- `yield`문은 설령 마지막 문이라고 하더라도 절대 제너레이터를 끝내지 않는다.
+- `return`문을 사용하면 위치와 상관 없이 `done`은 즉시 `true`가 되고 `value`는 리턴이 반환하는 값이 된다.
+
+✔️사용 예시
+</br>
+
+    function* abc() {
+        yield 'a';
+        yield 'b';
+        return 'c';
+    }
+    
+    const it = abc();
+    it.next(); // { value: 'a', done: false }
+    it.next(); // { value: 'b', done: false }
+    it.next(); // { value: 'c', done: true }
+</br>
+
+❗ 제너레이터에서 보통 `done`이 `true`이면 `value`에 주의를 기울이지 않는다는 점을 주의해야한다.
+</br>
+
+    for(let l of abc()) {
+        console.log(l);
+    }
+</br>
+
+- 위의 예시에서 a, b 는 출력되지만 c 는 출력되지 않는다.
+- 따라서 제너레이터에서 중요한 값은 `return`이 아닌 `yield`를 써주는게 좋다.
+- `return`은 오로지 제너레이터를 중간에 종료하는 목적으로만 쓰자.
