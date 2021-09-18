@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Timer</title>
+</head>
+<body>
+    <form name="timeForm" id="inputTime">
+        <input type="number" name="hours" id="inputHours" placeholder="00">
+        <input type="number" name="minutes" id="inputMinutes" placeholder="00">
+        <input type="number" name="seconds" id="inputSeconds" placeholder="00">
+        <input type="button" value="SUBMIT">
+    </form>
+    <section class="display">
+        <div class="displayHours">00</div>
+        <div>:</div>
+        <div class="displayMinutes">00</div>
+        <div>:</div>
+        <div class="displaySeconds">00</div>
+    </section>
+    <section class="circle">
+        <div id="timeCircle" data-percent="100">
+          <div id="timeCircle-left"></div>
+        </div>
+    </section>
+    <section class="controls">
+        <button id="startPauseResume">START</button>
+        <button id="reset">RESET</button>
+    </section>
+</body>
+</html>
