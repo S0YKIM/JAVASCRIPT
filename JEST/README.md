@@ -22,9 +22,9 @@ $ npm install --save-dev jest
 (3) package.json 파일 수정
 ----
 
-"scripts": {
-   "test": "jest --watch"
- }
+      "scripts": {
+         "test": "jest --watch"
+       }
  
 - test 스크립트를 jest 로 수정해준다
 - --watch 옵션은 파일을 수정하고 저장하면 자동으로 파일의 변경을 감지하고 테스트 코드를 실행한다
@@ -91,9 +91,9 @@ $ npm test
 
 - test() 의 구조:
 
-test("테스트 설명", () => {
-  expect("검증 대상").toXxx("기대 결과");
-});
+      test("테스트 설명", () => {
+        expect("검증 대상").toXxx("기대 결과");
+      });
 
 
 - test() 대신 it() 을 사용해도 된다.
