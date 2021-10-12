@@ -118,6 +118,9 @@ $ npm test
 
 - toBe() 와 같은 to~ 함수들을 Matchers 라고 부르며 검증 대상이 어떠한 조건을 만족하는지 확인하는 역할을 한다.
 - toBe() 외에도 toEqual() 등의 다양한 Matchers 함수가 존재한다.
+- 기타 Matchers 함수 참고:
+
+https://jestjs.io/docs/expect
 
 
 
