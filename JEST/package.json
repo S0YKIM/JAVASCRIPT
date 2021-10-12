@@ -1,0 +1,11 @@
+{
+  "name": "jest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "myTestFile.js",
+  "scripts": {
+    "test": "jest --watch"
+  },
+  "author": "",
+  "license": "ISC"
+}
