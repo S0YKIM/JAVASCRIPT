@@ -5,7 +5,7 @@
 (1) package.json 생성
 ----
 
-$npm init
+      $npm init
 - 초기화 커맨드로 package.json 파일 만들기
 
 </br>
@@ -14,7 +14,7 @@ $npm init
 (2) Jest 설치
 ----
 
-$ npm install --save-dev jest
+      $ npm install --save-dev jest
 - Jest 라이브러리를 개발 의존성으로 설치
 
 </br>
